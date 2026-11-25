@@ -8,6 +8,14 @@
 - [前往介绍页下载 6.1.5](https://1xuda.github.io/xuebutong/#download)
 - 遇到 bug 请联系作者企鹅：**2899145437**，或通过本仓库 Issues 反馈。
 
+## 界面预览
+
+以下截图来自 6.1.5 版本的实际界面。
+
+| 首页 | 模型与 API | 软件更新 |
+| :---: | :---: | :---: |
+| <img src="docs/assets/screen-home.png" alt="学不通首页" width="240"> | <img src="docs/assets/screen-model.png" alt="模型供应商配置" width="240"> | <img src="docs/assets/screen-update.png" alt="软件更新" width="240"> |
+
 ## 使用须知
 
 软件本身免费。AI 模型请求需要联网，第三方模型服务商可能收取费用，费用及模型权限以供应商为准。屏幕文字模式在本机识字；截图搜题会向所选视觉模型供应商发送整屏截图。API Key 和历史记录保存在本机应用数据中，请勿在 Issues、截图或提交内容中公开密钥。悬浮窗、无障碍和屏幕共享权限按所选功能在设备上授权。
