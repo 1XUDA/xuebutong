@@ -5,7 +5,7 @@
 学不通是一款 Android 学习辅助工具，支持无障碍读取页面文字、整屏本地文字识别及截图搜题。可配置自己的 AI 供应商和模型。
 
 - [项目介绍页](https://1xuda.github.io/xuebutong/)
-- [下载 6.1.5 安装包](https://github.com/1XUDA/xuebutong/releases/download/v6.1.5/xuebutong-6.1.5.apk)
+- [前往介绍页下载 6.1.5](https://1xuda.github.io/xuebutong/#download)
 - 遇到 bug 请联系作者企鹅：**2899145437**，或通过本仓库 Issues 反馈。
 
 ## 使用须知
