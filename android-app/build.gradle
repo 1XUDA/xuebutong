@@ -1,0 +1,26 @@
+plugins { id "com.android.application" }
+
+android {
+    namespace "com.xuebutong.app"
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.xuebutong.app"
+        minSdk 24
+        targetSdk 31
+        versionCode 66
+        versionName "6.1.5"
+    }
+
+    // 本项目为直接分发版，保留现有 targetSdk 以兼容 6.0 识题流程。
+    lint { disable "ExpiredTargetSdkVersion" }
+    buildFeatures { buildConfig true }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+dependencies {
+    implementation "com.microsoft.onnxruntime:onnxruntime-android:1.23.2"
+    testImplementation "junit:junit:4.13.2"
+}
