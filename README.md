@@ -5,18 +5,26 @@
 学不通是一款 Android 学习辅助工具，支持无障碍读取页面文字、整屏本地文字识别及截图搜题。可配置自己的 AI 供应商和模型。
 
 - [项目介绍页](https://1xuda.github.io/xuebutong/)
-- [前往介绍页下载 6.1.5](https://1xuda.github.io/xuebutong/#download)
+- [前往介绍页下载 6.1.6](https://1xuda.github.io/xuebutong/#download)
 - 遇到 bug 请联系作者企鹅：**2899145437**，或通过本仓库 Issues 反馈。
 
 ## 界面预览
 
-以下截图来自 6.1.5 版本的实际界面。
+首页与题库截图来自 6.1.6，模型和更新页面截图来自 6.1.5；题库中的题目为示例。
 
 | 首页 | 模型与 API | 软件更新 |
 | :---: | :---: | :---: |
-| <img src="docs/assets/screen-home.png" alt="学不通首页" width="240"> | <img src="docs/assets/screen-model.png" alt="模型供应商配置" width="240"> | <img src="docs/assets/screen-update.png" alt="软件更新" width="240"> |
+| <img src="docs/assets/screen-home-616.png" alt="学不通首页" width="240"> | <img src="docs/assets/screen-model.png" alt="模型供应商配置" width="240"> | <img src="docs/assets/screen-update.png" alt="软件更新" width="240"> |
+
+题库界面：
+
+<img src="docs/assets/screen-bank.png" alt="本地题库界面与示例题目" width="240">
 
 ## 使用须知
+
+### 本地题库
+
+在首页“题库”中可查看或导出内置 XLSX 模板，按“题库”工作表填写后导入；“填写示例”工作表不会导入。导入会先检查必填字段和重复题目。可在题库页面增删改查，并用“优先使用题库”开关决定是否在作答时参考本地题库。选择题仅在题干和选项完整匹配时参考，并按选项内容换算答案；无法可靠匹配时继续使用 AI 作答。截图模式启用题库后会先在本机 OCR 并请求 AI 整理题目，未匹配则仍使用原截图请求视觉模型。模型可能产生错误，题库答案也需要用户核对。
 
 软件本身免费。AI 模型请求需要联网，第三方模型服务商可能收取费用，费用及模型权限以供应商为准。屏幕文字模式在本机识字；截图搜题会向所选视觉模型供应商发送整屏截图。API Key 和历史记录保存在本机应用数据中，请勿在 Issues、截图或提交内容中公开密钥。悬浮窗、无障碍和屏幕共享权限按所选功能在设备上授权。
 

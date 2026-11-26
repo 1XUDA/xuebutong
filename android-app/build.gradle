@@ -8,8 +8,8 @@ android {
         applicationId "com.xuebutong.app"
         minSdk 24
         targetSdk 31
-        versionCode 66
-        versionName "6.1.5"
+        versionCode 67
+        versionName "6.1.6"
     }
 
     // 本项目为直接分发版，保留现有 targetSdk 以兼容 6.0 识题流程。
