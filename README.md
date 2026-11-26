@@ -5,7 +5,7 @@
 学不通是一款 Android 学习辅助工具，支持无障碍读取页面文字、整屏本地文字识别及截图搜题。可配置自己的 AI 供应商和模型。
 
 - [项目介绍页](https://1xuda.github.io/xuebutong/)
-- [前往介绍页下载 6.1.6](https://1xuda.github.io/xuebutong/#download)
+- [前往介绍页下载 6.1.7](https://1xuda.github.io/xuebutong/#download)
 - 遇到 bug 请联系作者企鹅：**2899145437**，或通过本仓库 Issues 反馈。
 
 ## 界面预览
@@ -16,11 +16,19 @@
 | :---: | :---: | :---: |
 | <img src="docs/assets/screen-home-616.png" alt="学不通首页" width="240"> | <img src="docs/assets/screen-model.png" alt="模型供应商配置" width="240"> | <img src="docs/assets/screen-update.png" alt="软件更新" width="240"> |
 
+答案显示设置（6.1.7）：
+
+<img src="docs/assets/screen-answer-settings.png" alt="答案显示自定义设置" width="240">
+
 题库界面：
 
 <img src="docs/assets/screen-bank.png" alt="本地题库界面与示例题目" width="240">
 
 ## 使用须知
+
+### 答案显示设置
+
+在“应用设置 → 答案显示设置”或答案大窗的设置按钮中，可调整窗口大小、颜色、内容、模板、显示时长与复制方式。格式支持 `{题目}`、`{答案}`、`{解析}`、`{模型名称}` 和 `{答案来源}`。模型未按格式返回时会完整显示原文，此时不能可靠地拆分答案与解析。截图模式中的题目可能来自视觉模型提取，应自行核对。
 
 ### 本地题库
 

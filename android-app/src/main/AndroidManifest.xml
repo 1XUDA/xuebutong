@@ -26,6 +26,7 @@
 
         <activity android:name=".update.UpdateActivity" android:exported="false" />
         <activity android:name=".bank.BankActivity" android:exported="false" />
+        <activity android:name=".answer.AnswerSettingsActivity" android:exported="false" />
         <provider android:name=".update.UpdateProvider" android:authorities="${applicationId}.updates"
             android:exported="false" android:grantUriPermissions="true" />
 

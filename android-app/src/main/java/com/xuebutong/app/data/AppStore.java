@@ -87,6 +87,11 @@ public final class AppStore {
         prefs.edit().putString("windowMode", "large".equals(mode) ? "large" : "small").apply();
     }
 
+    public void resetAnswerDisplay() {
+        prefs.edit().putString("windowMode","small").putString("answerTextColor","#D4AF37").putInt("answerAlpha",85)
+                .remove("answerSmallPosX").remove("answerSmallPosY").remove("answerLargePosX").remove("answerLargePosY").apply();
+    }
+
     public int intSetting(String key, int fallback) {
         return prefs.getInt(key, fallback);
     }

@@ -162,7 +162,7 @@ public final class MainActivity extends Activity {
         nav.addView(navItem("首页",R.drawable.ui_home,()->scroll.smoothScrollTo(0,0)),new LinearLayout.LayoutParams(0,dp(58),1));nav.addView(navItem("搜题",R.drawable.ui_search,()->scroll.smoothScrollTo(0,captureModes.getTop())),new LinearLayout.LayoutParams(0,dp(58),1));nav.addView(navItem("模型",R.drawable.ui_layers,this::showModelManager),new LinearLayout.LayoutParams(0,dp(58),1));nav.addView(navItem("更新",R.drawable.ui_download,()->startActivity(new Intent(this,com.xuebutong.app.update.UpdateActivity.class))),new LinearLayout.LayoutParams(0,dp(58),1));shell.addView(nav,matchWrap());return shell;
     }
     private View toolShortcut(String label,int icon,Runnable action){TextView v=centered(label,12,INK);android.graphics.drawable.Drawable d=getDrawable(icon).mutate();d.setBounds(0,0,dp(23),dp(23));v.setCompoundDrawables(null,d,null,null);v.setCompoundDrawablePadding(dp(4));v.setOnClickListener(x->action.run());return v;}
-    private void showHomeMenu(){String[] items={"模型与 API","答案窗口：小窗","答案窗口：大窗","搜题指令","搜题记录","悬浮外观","软件更新"};new AlertDialog.Builder(this).setTitle("应用设置").setItems(items,(d,i)->{switch(i){case 0:showModelManager();break;case 1:selectMode("small");break;case 2:selectMode("large");break;case 3:showPromptEditor();break;case 4:showHistory();break;case 5:showAppearance();break;case 6:startActivity(new Intent(this,com.xuebutong.app.update.UpdateActivity.class));break;}}).show();}
+    private void showHomeMenu(){String[] items={"模型与 API","答案窗口：小窗","答案窗口：大窗","搜题指令","搜题记录","悬浮外观","答案显示设置","软件更新"};new AlertDialog.Builder(this).setTitle("应用设置").setItems(items,(d,i)->{switch(i){case 0:showModelManager();break;case 1:selectMode("small");break;case 2:selectMode("large");break;case 3:showPromptEditor();break;case 4:showHistory();break;case 5:showAppearance();break;case 6:startActivity(new Intent(this,com.xuebutong.app.answer.AnswerSettingsActivity.class));break;case 7:startActivity(new Intent(this,com.xuebutong.app.update.UpdateActivity.class));break;}}).show();}
 
     private TextView captureOption(String title,String description,int iconId){
         TextView v=centered(title+"\n"+description,12,INK);
@@ -531,10 +531,15 @@ public final class MainActivity extends Activity {
         layout.addView(answerTransparency, matchWrap());
         layout.addView(vibration, margins(matchWrap(), 0, dp(10), 0, 0));
         layout.addView(duration, margins(matchWrap(), 0, dp(8), 0, 0));
-        new AlertDialog.Builder(this).setTitle("自定义外观设置").setView(layout)
+        layout.addView(transparentButton("答案显示设置  ›", RED), matchWrap());
+        View answerSettings = layout.getChildAt(layout.getChildCount()-1);
+        answerSettings.setOnClickListener(v -> startActivity(new Intent(this, com.xuebutong.app.answer.AnswerSettingsActivity.class)));
+        ScrollView appearanceScroll=new ScrollView(this);appearanceScroll.addView(layout);
+        new AlertDialog.Builder(this).setTitle("自定义外观设置").setView(appearanceScroll)
                 .setNegativeButton("取消", null)
                 .setNeutralButton("恢复默认", (d, w) -> {
                     store.saveAppearance(100, "#D4AF37", 28, 85, "#D4AF37", 30, true);
+                    getSharedPreferences(com.xuebutong.app.answer.AnswerSettingsActivity.PREFS,MODE_PRIVATE).edit().putString("color","#D4AF37").apply();
                     applyOverlayAppearance();
                     toast("已恢复默认外观");
                 })
@@ -544,6 +549,7 @@ public final class MainActivity extends Activity {
                     store.saveAppearance(floatColor.opacity, floatColor.color,
                             floatSize.getProgress() + 20, answerColor.opacity,
                             answerColor.color, ms, vibration.isChecked());
+                    getSharedPreferences(com.xuebutong.app.answer.AnswerSettingsActivity.PREFS,MODE_PRIVATE).edit().putString("color",answerColor.color).apply();
                     applyOverlayAppearance();
                     toast("外观设置已保存");
                 }).show();
